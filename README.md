@@ -5,8 +5,8 @@
 - **Team Number:** 2
 - **Team Name:** Name
 ### Team Members
-- **Mason Chansamone** (GitHub:`username`, Email: )
-- **Jackie Luu** (GitHub: `username`, Email: )
+- **Mason Chansamone** (GitHub:`mchansamone1`, Email: )
+- **Jackie Luu** (GitHub: `dytzi`, Email: )
 - **Geraldine Casas** (GitHub: `geca8469`, Email: geca8469@colorado.edu)
 ### Scheduled Weekly Team Meeting
 **Wednesdays at 7:30pm MT**
