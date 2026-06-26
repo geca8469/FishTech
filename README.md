@@ -13,7 +13,7 @@
 
 ---
 ## Vision Statement
-FinTech is a collaborative web application designed to help fish enthusiasts understand water conditions and how they influence aquatic life, and where they can find a body of water with similar conditions. 
+FishTech is a collaborative web application designed to help fish enthusiasts understand water conditions and how they influence aquatic life, and where they can find a body of water with similar conditions. 
 
 ---
 ## Motivation
