@@ -3,7 +3,7 @@
 **FinTech**
 ## Team Information
 - **Team Number:** 2
-- **Team Name:** FinTech
+- **Team Name:** FishTech
 ### Team Members
 - **Mason Chansamone** (GitHub:`mchansamone1`, Email: mach3999@colorado.edu)
 - **Jackie Luu** (GitHub: `dytzi`, Email: jalu9740@colorado.edu )
