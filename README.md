@@ -1,6 +1,6 @@
 # Milestone 1: Project Proposal
 ## Project Title
-**FinTech**
+**FishTech**
 ## Team Information
 - **Team Number:** 2
 - **Team Name:** FishTech
