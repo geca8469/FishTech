@@ -38,14 +38,12 @@ At the time of this report:
 ---
 
 ## Progress Since Last Week
-
-This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
+This week, the team focused on establishing a foundation of FishTech by improving the database schema and further defining core functionality.   
 
 Key accomplishments include:
 - Creation of a shared GitHub repository with all members added
-- Establishment of a basic frontend and backend project structure
-- Agreement on the minimum viable product (MVP) feature set
-- Initial wireframe sketches for core pages (scheduling and tasks)
+- Agreement on the minimum viable product (MVP) features and optional enhancements 
+- Initial wireframe sketches for core pages for navigation flow with landing page, fish collection, and habitat builder
 
 ---
 
@@ -56,32 +54,27 @@ Key accomplishments include:
 - Designed a basic wireframe to outline layout and navigation  
 - Created User Stories to define FishTech's core functionality  
 - Desinged preliminary Fish database schema to organize fish and habitat information  
-
+- Researched possible sources for fish and habitat information  
 ---
 
 ## Planned Tasks for Next Week
-- Design and implement the initial database schema  
-- Create basic backend routes for users and groups  
-- Begin frontend page layout for scheduling and task views  
-- Refine wireframes based on team feedback and milestone requirements  
+- Create a PAGE_TESTING.md file to document the main pages that will be implemented for FishTech
+- Continue working on database, whether it is combining APIs or generating our own sample data
+- 
 
 ---
 
 ## Blockers and Issues
 No major technical blockers were encountered this week.
 
-One discussion point involved balancing MVP scope versus optional enhancements. The team agreed to:
-- Focus on a **simple availability overlap view**
-- Defer advanced calendar interactions until later milestones (if time allows)
-
+- Limited availability of a single API that contatins fish, habitat, and water condition data  
+- Potential of combining seperate APIs or generating our own sample data  
 ---
 
 ## Risks and Mitigation
-**Identified Risk:** Feature creep  
-- *Mitigation:* Strict adherence to MVP scope and milestone requirements
+**Identified Risk:** Limited availability of comprehensive API
+- *Mitigation:* Research multiple APIs and manually generate missing data
 
-**Identified Risk:** Frontend/backend integration complexity  
-- *Mitigation:* Develop and test API endpoints incrementally, starting early
 
 ---
 
@@ -96,9 +89,9 @@ The weekly status format was found to be useful for maintaining accountability a
 ---
 
 ## Individual Contributions This Week
-- **Mason Chansamone:** 
-- **Jackie Luu:**
-- **Gerladine Casas:**
+- **Mason Chansamone:** Researched possible APIs to support fish species, habitat, and water condition data  
+- **Jackie Luu:** Refined database schema to show table relationships and bette data organization  
+- **Gerladine Casas:** Generate sample data for Fish, habitat, and watercondition data, documented/summarized teams weekly status meeting  
 
 ---
 
