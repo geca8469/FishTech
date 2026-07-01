@@ -10,7 +10,7 @@
 ## Reporting Period
 **Week:** 3  
 **Meeting Held:** Yes  
-**Meeting Date:** June 30 
+**Meeting Date:** June 30  
 **Meeting Duration:** 30 minutes  
 **Meeting Format:** Zoom  
 
