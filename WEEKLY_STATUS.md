@@ -1,9 +1,9 @@
 # WEEKLY_STATUS.md
 ## Project Milestone 3: Weekly Status Report
 
-**Project:** FishTech
-**Team Number:** 2
-**Team Name:** FishTech 
+**Project:** FishTech  
+**Team Number:** 2  
+**Team Name:** FishTech   
 
 ---
 
