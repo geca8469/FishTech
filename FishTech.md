@@ -126,7 +126,7 @@ Landing Page (Welcome)
 **Purpose:** An interactive tool that allows the user to build their own water system with fish and matches it to an existing water system if possible.
 
 **Mockup:**
-![Habitat builder mockup](images/habitat-builder-mockup.png)
+![Habitat builder mockup](images/habitat_builder.png)
 
 ### Parameters Needed for the Page
 - Query params:
