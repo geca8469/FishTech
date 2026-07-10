@@ -158,6 +158,9 @@ Landing Page (Welcome)
 ### Page Description
 **Purpose:** To view different habitats on an interactive map. Users can select a river on the map and view the species of fish living there along with their water conditions.
 
+**Mockup:**
+![Interactive map mockup](images/fish-details-mockup.png)
+
 ### Parameters Needed for the Page
 - Route params: none
 - Query params:
