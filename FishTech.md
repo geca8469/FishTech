@@ -9,7 +9,7 @@ Landing Page (Welcome)
 **Purpose:** To introduce Fishtech and allow users to explore the application. The main landing page will highlight key features such as searching for fish species, building a fish habitat, and viewing an interactive map.
 
 **Mockup:**
-![Landing page mockup](images/landing-page-mockup.png)
+![Landing page mockup](images/landing_page.png)
 
 ### Parameters Needed for the Page
 - Query params: none
@@ -88,7 +88,7 @@ Landing Page (Welcome)
 **Purpose:** To search and display detailed information about fish species, including habitats and water conditions.
 
 **Mockup:**
-![Fish details mockup](images/fish-details-mockup.png)
+![Fish details mockup](images/fish_info.png)
 
 ### Parameters Needed for the Page
 - Route params: none
@@ -159,7 +159,7 @@ Landing Page (Welcome)
 **Purpose:** To view different habitats on an interactive map. Users can select a river on the map and view the species of fish living there along with their water conditions.
 
 **Mockup:**
-![Interactive map mockup](images/fish-details-mockup.png)
+![Interactive map mockup](images/interactive_map.png)
 
 ### Parameters Needed for the Page
 - Route params: none
