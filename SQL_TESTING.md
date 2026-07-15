@@ -2,6 +2,8 @@
 \#\# Project Milestone 5: SQL Design  
 \*\*Project:\*\* FishTech  
 \*\*Purpose:\*\* Database design and testing specification for developers  
+
+![Database Schema](images/tables.png)
 \---  
 \#\# Overview  
 This document describes the \*\*database schema\*\*, \*\*table relationships\*\*, and  
