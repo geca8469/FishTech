@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FishTech</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <a class="logo" href="home.html">
+                FishTech
+            </a>
+
+            <ul>
+                <li>
+                    <a href="fish-collection.html">Explore</a>
+                </li>
+
+                <li>
+                    <a href="habitat-builder.html">Build</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a class="login-btn" href="login.html">
+                        Sign In
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>
+                    Explore Fish.<br>
+                    Understand Habitats.
+                </h1>
+
+                <p>
+                    Learn about fish, explore water
+                    bodies, and discover how different water
+                    conditions affect aquatic life.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        class="main-btn"
+                        href="fish-collection.html"
+                    >
+                        Explore Fish
+                    </a>
+
+                    <a
+                        class="outline-btn"
+                        href="habitat-builder.html"
+                    >
+                        Build Habitat
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-picture">
+
+                <img
+                    src="{{ url_for('static', filename='images/koi_fish.png') }}"
+                    alt="Freshwater fish information"
+                >
+
+            </div>
+
+        </section>
+
+        <section class="features">
+
+            <article class="card">
+
+                <h2>Fish Collection</h2>
+
+                <p>
+                    Browse different fish and learn about their
+                    size, habitat, and preferred water conditions.
+                </p>
+
+                <a href="fish-collection.html">
+                    Browse Fish
+                </a>
+
+            </article>
+
+            <article class="card">
+
+                <h2>Interactive Map</h2>
+
+                <p>
+                    Explore different water bodies and view the
+                    fish species that live in each location.
+                </p>
+
+                <a href="interactive-map.html">
+                    Open Map
+                </a>
+
+            </article>
+
+            <article class="card">
+
+                <h2>Habitat Builder</h2>
+
+                <p>
+                    Choose water conditions to build your habitat and get matched with compatible fishes. 
+                </p>
+
+                <a href="habitat-builder.html">
+                    Build Habitat
+                </a>
+
+            </article>
+
+        </section>
+
+        <section class="about" id="about">
+
+            <h2>About FishTech</h2>
+
+            <p>
+                FishTech is a collaborative web application designed to help fish enthusiasts understand water conditions and how they influence aquatic life, and where they can find a body of water with similar conditions.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            CSPB3308 FishTech by Geraldine Casas, Jackie Lu, and Mason Chansamone
+        </p>
+    </footer>
+
+
+</body>
+</html>

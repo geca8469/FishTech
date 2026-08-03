@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5fafc;
+    color: #29363d;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: white;
+    border-bottom: 1px solid #d7e2e7;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1100px;
+    min-height: 70px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #0b4f6c;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.navbar a {
+    color: #29363d;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #1f7a8c;
+}
+
+.login-btn {
+    padding: 8px 17px;
+    border: 2px solid #0b4f6c;
+    border-radius: 20px;
+}
+
+.hero {
+    min-height: 540px;
+    padding: 65px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+
+    background-color: #e1f2f7;
+}
+
+.hero-text {
+    width: 100%;
+    max-width: 560px;
+}
+
+
+.hero h1 {
+    margin: 10px 0 20px;
+
+    color: #082f49;
+    font-size: 58px;
+    line-height: 1.1;
+}
+
+.hero-text > p:last-of-type {
+    max-width: 520px;
+    margin-bottom: 28px;
+
+    color: #4b5b65;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.main-btn,
+.outline-btn {
+    display: inline-block;
+    padding: 12px 22px;
+
+    border: 2px solid #0b4f6c;
+    border-radius: 22px;
+
+    font-weight: bold;
+}
+
+.main-btn {
+    background-color: #0b4f6c;
+    color: white;
+}
+
+.outline-btn {
+    color: #0b4f6c;
+}
+
+.main-btn:hover {
+    background-color: #083b50;
+}
+
+.outline-btn:hover {
+    background-color: white;
+}
+
+.hero-picture {
+    width: 420px;
+    padding: 15px;
+
+    border-radius: 20px;
+    background-color: white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.hero-picture img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.features {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    padding: 28px;
+
+    border: 1px solid #d7e2e7;
+    border-radius: 14px;
+
+    background-color: white;
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #0b4f6c;
+    font-size: 22px;
+}
+
+.card p {
+    color: #52616a;
+    line-height: 1.6;
+}
+
+.card a {
+    color: #1f7a8c;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.about {
+    padding: 70px 20px;
+    background-color: #dceef3;
+    text-align: center;
+}
+
+.about h2 {
+    margin-top: 0;
+    color: #0b4f6c;
+    font-size: 32px;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+
+    color: #4b5b65;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 22px;
+    background-color: #082f49;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .navbar {
+        padding: 20px 0;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text > p:last-of-type {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-picture {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .main-btn,
+    .outline-btn {
+        text-align: center;
+    }
+}
