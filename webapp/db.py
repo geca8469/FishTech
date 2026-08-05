@@ -152,7 +152,6 @@ def get_user(username, password):
         if conn is not None:
             conn.close()
 
-### Test Functions
 def add_user(username, password):
     conn = None
     c = None
@@ -160,6 +159,15 @@ def add_user(username, password):
     try:
         conn = psycopg2.connect(DATABASE_URL)
         c = conn.cursor()
+
+        c.execute('''
+            SELECT UserID
+            FROM Users
+            WHERE Username = %s;
+            ''', (username,)
+        )
+        if c.fetchone() is not None:
+            return (False, 'Username already in use')
 
         c.execute(
             '''
@@ -170,14 +178,14 @@ def add_user(username, password):
 
         conn.commit()
 
-        return "User added successfully"
+        return (True, 'User added')
 
     except Exception as e:
         if conn is not None:
             conn.rollback()
 
         print(f"Error adding user: {e}")
-        return None
+        return (False, 'Database Error')
 
     finally:
         if c is not None:
@@ -185,8 +193,8 @@ def add_user(username, password):
 
         if conn is not None:
             conn.close()
-
-
+            
+### Test Functions
 def get_table(table_name):
     conn = None
     c = None

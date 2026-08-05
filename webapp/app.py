@@ -45,6 +45,23 @@ def logout():
     session.pop('username', None)
     return redirect('/')
 
+
+@app.route('/create_account', methods=['GET', 'POST'])
+def create_account():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        result, message = db.add_user(username, password)
+        if result:
+            return redirect('/login')
+        else:
+            return render_template('create_account.html', error=message)
+
+    return render_template('create_account.html')
+
+
+
 ### TESTING ROUTES
 @app.route('/create_tables')
 def create_tables():
