@@ -1,5 +1,6 @@
 import os
 import psycopg2
+from psycopg2 import sql
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
@@ -189,16 +190,17 @@ def add_user(username, password):
 def get_table(table_name):
     conn = None
     c = None
-
+    
     try:
         conn = psycopg2.connect(DATABASE_URL)
         c = conn.cursor()
 
-        c.execute('''
-            SELECT * 
-            FROM %s;
-            ''', (table_name)
-        )
+        query = sql.SQL('''
+            SELECT *
+            FROM {};
+        ''').format(sql.Identifier(table_name))
+
+        c.execute(query)
 
         table = c.fetchall()
 
