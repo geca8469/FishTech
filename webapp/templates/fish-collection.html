@@ -14,7 +14,23 @@
 <body>
     {% include 'navbar.html' %}
     <h1>Fish Collection Page</h1>
+    
+    <div class="fish-container">
+        {% for fish in fish_list %}
+        <div class="fish-card">
+            <h2>{{ fish[0] }}</h2>
+            <img 
+                src="{{ fish[1] }}" 
+                alt="Image of {{ fish[0] }} not available" 
+                width="200"
+            >
 
+            <p>Size: {{ fish[2] }}</p>
+            <p>{{ fish[3] }}</p>
+
+        </div>
+        {% endfor %}
+    </div>
 
 </body>
 </html>
