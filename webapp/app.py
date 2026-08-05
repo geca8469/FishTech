@@ -38,6 +38,12 @@ def login():
             return render_template('login.html', error='Invalid Username or Password')
 
     return render_template('login.html')
+    
+@app.route('/logout')
+def logout():
+    session.pop('userID', None)
+    session.pop('username', None)
+    return redirect('/home'))
 
 ### TESTING ROUTES
 @app.route('/create_tables')
