@@ -22,7 +22,22 @@ def home():
 def fish_collection():
     return render_template("fish-collection.html")
     
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = db.get_user(username, password)
 
+        if user:
+            session['userID'] = user[0]
+            session['username'] = user[1]
+            return redirect('/')
+
+        else:
+            return render_template('login.html', error='Invalid Username or Password')
+
+    return render_template('login.html')
 
 ### TESTING ROUTES
 @app.route('/create_tables')

@@ -19,8 +19,15 @@
             </li>
     
             <li>
-                <a class="login-btn" href="login.html">
-                    Sign In
+                {% if session.get('username') %}
+                    <a class="login-btn" href="#">
+                        {{ session['username'] }}
+                    </a>
+                {% else %}
+                    <a class="login-btn" href="{{ url_for('login') }}">
+                        Sign In
+                    </a>
+                {% endif %}
                 </a>
             </li>
         </ul>
