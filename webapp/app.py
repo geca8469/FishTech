@@ -19,7 +19,7 @@ def home():
 
 
 ### TESTING ROUTES
-@app.route('create_tables')
+@app.route('/create_tables')
 def create_tables():
     return db.create_tables()
 
