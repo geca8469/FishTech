@@ -43,7 +43,7 @@ def login():
 def logout():
     session.pop('userID', None)
     session.pop('username', None)
-    return redirect('/home')
+    return redirect('/')
 
 ### TESTING ROUTES
 @app.route('/create_tables')
