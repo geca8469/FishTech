@@ -33,8 +33,8 @@ def create_tables():
 def show_table(table_name):
     return db.get_table(table_name)
 
-@app.route('/add_user')
-def add_user():
+@app.route('/add_user/<username>/<password>')
+def add_user(username, password):
     return db.add_user('name', 'pass')
 
 if __name__ == "__main__":
