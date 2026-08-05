@@ -58,6 +58,10 @@ def show_table(table_name):
 def add_user(username, password):
     return db.add_user(username, password)
 
+@app.route('/drop_all_tables')
+def drop_all_tables():
+    return db.drop_all_tables()
+
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",

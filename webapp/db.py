@@ -220,3 +220,43 @@ def get_table(table_name):
 
         if conn is not None:
             conn.close()
+
+
+def drop_all_tables():
+    conn = None
+    c = None
+
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+
+        c.execute('''
+            DROP TABLE IF EXISTS
+                WaterBodyFish,
+                UserSetting,
+                UserFavorites,
+                WaterCondition,
+                FishCondition,
+                WaterBody,
+                Fish,
+                Users
+            CASCADE;
+        ''')
+
+        conn.commit()
+
+        return "Deleted All tables"
+
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+
+        print(f"Error deleting tables: {e}")
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+
+        if conn is not None:
+            conn.close()
