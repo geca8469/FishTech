@@ -98,7 +98,16 @@ def create_tables():
         ''')
         
         conn.commit()
-        return 'Tables created or already created'
+
+        c.execute('''
+            SELECT table_name
+            FROM information_schema.tables
+            WHERE table_schema = 'public';
+        ''')
+        
+        tables = c.fetchall()
+        return f'Tables in database: {tables}'
+        
     except Exception as e:
         if conn is not None:
             conn.rollback()
