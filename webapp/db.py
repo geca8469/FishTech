@@ -118,3 +118,33 @@ def create_tables():
             c.close()
         if conn is not None:
             conn.close()
+
+def get_user(username, password):
+    conn = None
+    c = None
+    
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+        
+        c.execute('''
+            SELECT userID, username
+            FROM Users
+            WHERE username = %s AND PASSWORD = %s;
+            ''', (username, password)
+        )
+        
+        user = c.fetchone()
+        return user
+        
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+        print(f'Error looking up user: {e}')
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+        if conn is not None:
+            conn.close()
