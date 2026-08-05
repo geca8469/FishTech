@@ -12,11 +12,16 @@ app.wsgi_app = ProxyFix(
     x_prefix=1
 )
 
-
+### WEB ROUTES
 @app.route("/")
 def home():
     return render_template("home.html")
 
+
+### TESTING ROUTES
+@app.route('create_tables')
+def create_tables():
+    return db.create_tables()
 
 if __name__ == "__main__":
     app.run(
