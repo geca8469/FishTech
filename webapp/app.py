@@ -56,7 +56,7 @@ def show_table(table_name):
 
 @app.route('/add_user/<username>/<password>')
 def add_user(username, password):
-    return db.add_user('name', 'pass')
+    return db.add_user(username, password)
 
 if __name__ == "__main__":
     app.run(
