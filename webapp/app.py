@@ -17,6 +17,10 @@ app.wsgi_app = ProxyFix(
 def home():
     return render_template("home.html")
 
+@app.route("/fish-collection")
+def fish_collection():
+    return render_template("fish-collection.html")
+
 
 ### TESTING ROUTES
 @app.route('/create_tables')
