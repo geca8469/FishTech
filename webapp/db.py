@@ -3,6 +3,7 @@ import psycopg2
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
+### Main Functions
 def create_tables():
     conn = None
     c = None
@@ -119,6 +120,7 @@ def create_tables():
         if conn is not None:
             conn.close()
 
+
 def get_user(username, password):
     conn = None
     c = None
@@ -146,5 +148,73 @@ def get_user(username, password):
     finally:
         if c is not None:
             c.close()
+        if conn is not None:
+            conn.close()
+
+### Test Functions
+def add_user(username, password):
+    conn = None
+    c = None
+
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+
+        c.execute(
+            '''
+            INSERT INTO Users (username, password)
+            VALUES (%s, %s);
+            ''', (username, password)
+        )
+
+        conn.commit()
+
+        return "User added successfully"
+
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+
+        print(f"Error adding user: {e}")
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+
+        if conn is not None:
+            conn.close()
+
+
+def get_table(table_name):
+    conn = None
+    c = None
+
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+
+        c.execute('''
+            SELECT * 
+            FROM %s;
+            ''', (table_name)
+        )
+
+        table = c.fetchall()
+
+        print('successfully retrived table')
+        return table
+
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+
+        print(f"Error getting table: {e}")
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+
         if conn is not None:
             conn.close()
