@@ -17,16 +17,16 @@
     
     <div class="fish-container">
         {% for fish in fish_list %}
-        <div class="fish-card">
-            <h2>{{ fish[0] }}</h2>
-            <img 
-                src="{{ fish[1] }}" 
-                alt="Image of {{ fish[0] }} not available" 
+        <div class="fish-card" id="fish-{{ fish[0] }}">
+            <h2>{{ fish[1] }}</h2>
+            <img
+                src="{{ fish[2] }}"
+                alt="Image of {{ fish[1] }} not available"
                 width="200"
             >
 
-            <p>Size: {{ fish[2] }}</p>
-            <p>{{ fish[3] }}</p>
+            <p>Size: {{ fish[3] }}</p>
+            <p>{{ fish[4] }}</p>
 
         </div>
         {% endfor %}

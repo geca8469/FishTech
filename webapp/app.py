@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, redirect
+from flask import Flask, render_template, session, request, redirect, jsonify
 from werkzeug.middleware.proxy_fix import ProxyFix
 import db
 
@@ -22,7 +22,39 @@ def home():
 def fish_collection():
     fish_list = db.get_fish()
     return render_template("fish-collection.html", fish_list=fish_list)
-    
+
+@app.route("/map")
+def map_view():
+    water_bodies = db.get_water_bodies() or []
+    locations = [
+        {
+            'id': wb[0],
+            'name': wb[1],
+            'type': wb[2],
+            'lat': float(wb[3]) if wb[3] is not None else None,
+            'lng': float(wb[4]) if wb[4] is not None else None,
+            'size': float(wb[5]) if wb[5] is not None else None,
+            'description': wb[6],
+        }
+        for wb in water_bodies
+    ]
+    return render_template("map.html", locations=locations)
+
+@app.route("/api/waterbody/<int:waterbody_id>/fish")
+def waterbody_fish(waterbody_id):
+    fish = db.get_fish_by_waterbody(waterbody_id) or []
+    return jsonify([
+        {
+            'id': f[0],
+            'name': f[1],
+            'image': f[2],
+            'size': float(f[3]) if f[3] is not None else None,
+            'description': f[4],
+        }
+        for f in fish
+    ])
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':

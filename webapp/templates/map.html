@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Interactive Map - FishTech</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+    >
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    <main>
+
+        <section class="map-section">
+
+            <h1>Interactive Map</h1>
+            <p>Select a water body to see which fish live there and its water conditions.</p>
+
+            <div class="map-layout">
+
+                <div id="map"></div>
+
+                <aside class="location-panel">
+                    <h2>Selected Location</h2>
+
+                    <p><strong>Name:</strong> <span id="location-name">&mdash;</span></p>
+                    <p><strong>Water Type:</strong> <span id="location-type">&mdash;</span></p>
+                    <p id="location-description"></p>
+
+                    <h3>Fish Species</h3>
+                    <ul id="location-fish-list" class="fish-species-list">
+                        <li class="empty-state">No location selected</li>
+                    </ul>
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            CSPB3308 FishTech by Geraldine Casas, Jackie Lu, and Mason Chansamone
+        </p>
+    </footer>
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""
+    ></script>
+    <script>
+        window.FISHTECH_LOCATIONS = {{ locations | tojson }};
+        window.FISHTECH_FISH_COLLECTION_URL = {{ url_for('fish_collection') | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+
+</body>
+</html>
