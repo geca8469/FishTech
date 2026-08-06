@@ -80,6 +80,10 @@ def add_user(username, password):
 def drop_all_tables():
     return db.drop_all_tables()
 
+@app.route("/seed-db")
+def seed_db():
+    return db.seed_database()
+
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
