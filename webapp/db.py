@@ -115,20 +115,20 @@ def add_user(username, password):
 def get_fish():
     conn = None
     c = None
-    
+
     try:
         conn = psycopg2.connect(DATABASE_URL)
         c = conn.cursor()
-        
+
         c.execute('''
-            SELECT FishName, FishImage1, Size, Description
+            SELECT FishID, FishName, FishImage1, Size, Description
             FROM Fish;
             '''
         )
-        
+
         fish = c.fetchall()
         return fish
-        
+
     except Exception as e:
         if conn is not None:
             conn.rollback()
@@ -140,7 +140,67 @@ def get_fish():
             c.close()
         if conn is not None:
             conn.close()
-            
+
+def get_water_bodies():
+    conn = None
+    c = None
+
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+
+        c.execute('''
+            SELECT WaterBodyID, Name, Type, Latitude, Longitude, Size, Description
+            FROM WaterBody;
+            '''
+        )
+
+        water_bodies = c.fetchall()
+        return water_bodies
+
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+        print(f'Error getting water bodies: {e}')
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+        if conn is not None:
+            conn.close()
+
+def get_fish_by_waterbody(waterbody_id):
+    conn = None
+    c = None
+
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+
+        c.execute('''
+            SELECT Fish.FishID, Fish.FishName, Fish.FishImage1, Fish.Size, Fish.Description
+            FROM WaterBodyFish
+            JOIN Fish ON Fish.FishID = WaterBodyFish.FishID
+            WHERE WaterBodyFish.WaterBodyID = %s;
+            ''', (waterbody_id,)
+        )
+
+        fish = c.fetchall()
+        return fish
+
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+        print(f'Error getting fish for water body: {e}')
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+        if conn is not None:
+            conn.close()
+
 ### Test Functions
 def get_table(table_name):
     conn = None

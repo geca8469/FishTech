@@ -208,6 +208,101 @@ header {
     line-height: 1.7;
 }
 
+.map-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.map-section h1 {
+    margin: 0 0 8px;
+    color: #082f49;
+    font-size: 34px;
+}
+
+.map-section > p {
+    margin: 0 0 28px;
+    color: #4b5b65;
+    font-size: 16px;
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+#map {
+    height: 520px;
+    border: 1px solid #d7e2e7;
+    border-radius: 14px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
+}
+
+.location-panel {
+    padding: 24px;
+
+    border: 1px solid #d7e2e7;
+    border-radius: 14px;
+
+    background-color: white;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
+}
+
+.location-panel h2 {
+    margin-top: 0;
+    color: #0b4f6c;
+    font-size: 20px;
+}
+
+.location-panel h3 {
+    color: #0b4f6c;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.location-panel p {
+    color: #4b5b65;
+    line-height: 1.5;
+}
+
+.fish-species-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fish-species-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eef3f5;
+}
+
+.fish-species-list li:last-child {
+    border-bottom: none;
+}
+
+.fish-species-list a {
+    color: #1f7a8c;
+    font-weight: bold;
+}
+
+.fish-species-list .empty-state {
+    color: #8a99a1;
+    font-style: italic;
+}
+
+@media screen and (max-width: 850px) {
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        height: 380px;
+    }
+}
+
 footer {
     padding: 22px;
     background-color: #082f49;
