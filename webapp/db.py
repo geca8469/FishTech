@@ -196,6 +196,35 @@ def add_user(username, password):
 
         if conn is not None:
             conn.close()
+
+def get_fish():
+    conn = None
+    c = None
+    
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        c = conn.cursor()
+        
+        c.execute('''
+            SELECT FishName, FishImage1, Size, Description
+            FROM Fish;
+            '''
+        )
+        
+        fish = c.fetchall()
+        return fish
+        
+    except Exception as e:
+        if conn is not None:
+            conn.rollback()
+        print(f'Error Getting Fish collection: {e}')
+        return None
+
+    finally:
+        if c is not None:
+            c.close()
+        if conn is not None:
+            conn.close()
             
 ### Test Functions
 def get_table(table_name):

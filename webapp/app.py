@@ -20,7 +20,8 @@ def home():
 
 @app.route("/fish-collection")
 def fish_collection():
-    return render_template("fish-collection.html")
+    fish_list = db.get_fish()
+    return render_template("fish-collection.html", fish_list=fish_list)
     
 @app.route('/login', methods=['GET', 'POST'])
 def login():
