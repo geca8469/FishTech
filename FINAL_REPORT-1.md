@@ -14,7 +14,8 @@ FishTech
 
 - Project tracker (instructor can access): 
 - Version control repository (instructors have access): https://github.com/geca8469/FishTech/tree/main
-- 5-minute customer demo video: 
+- 5-minute customer demo video: https://cuboulder.zoom.us/rec/share/PB9NolGxH5JKEzNmLygQDeeeYTZJdplwvFpgnxuBF_TQ2ExWeLr4GjGLw6O8wyBV.DswBhEYwpfOr3mxf
+- Zoom Passcode: 5qYL1yJ
 - Public deployment site: https://fishtech.onrender.com/
 
 ## Repository Readiness
